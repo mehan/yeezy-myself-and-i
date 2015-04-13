@@ -1,6 +1,6 @@
-def lookup_rapper(rapper)
+def lookup_rapper(rapper_name)
 
-song_index = RapGenius.search_by_artist("#{rapper}")
+song_index = RapGenius.search_by_artist("#{rapper_name}")
 
 if song_index == []
 	puts "Sorry, the rapper you searched for was not found."
@@ -37,7 +37,7 @@ else
 		end
 		end
 
-	rapper = Rapper.new(rapper, pussy_count, bitch_count, ho_count)
+	rapper = Rapper.new(rapper_name, pussy_count, bitch_count, ho_count)
 	
 	puts "\n" 
 	puts "Here are the misogyny stats for #{rapper.name}:"
