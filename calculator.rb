@@ -2,6 +2,7 @@ require 'pry'
 require 'rapgenius'
 require_relative 'lib/rapper_class'
 
+puts "\n" 
 puts "Welcome to the Hip-Hop Misogyny Calculator. To get started, please enter the name of a rapper to look up:"
 
 rapper_name = gets.strip
@@ -47,9 +48,9 @@ else
 	puts "\n" 
 	puts "Here are the misogyny stats for #{rapper.name}:"
 	puts "\n" 
-	puts "Out of the 25 songs analyzed, #{rapper.name} uses the word 'bitch' #{rapper.bitch_score} times, 'pussy' #{rapper.pussy_score} times and 'ho' #{rapper.ho_score} times."
+	puts "Out of the #{song_ids.length} songs analyzed, #{rapper.name} uses the word 'bitch' #{rapper.bitch_score} times, 'pussy' #{rapper.pussy_score} times and 'ho' #{rapper.ho_score} times."
 	puts "\n" 
-	puts "Overall, we found #{rapper.bitch_score + rapper.pussy_score + rapper.ho_score} misogynistic lyrics in 25 #{rapper.name} songs."
+	puts "Overall, we found #{rapper.bitch_score + rapper.pussy_score + rapper.ho_score} misogynistic lyrics in #{song_ids.length} #{rapper.name} songs."
 	puts "\n" 
 
 end
