@@ -26,6 +26,7 @@ else
 	pussy_count = 0
 	bitch_count = 0
 	ho_count = 0
+	song_count = song_ids.length
 
 	lyrics_array.each do |lyric|
 		if lyric.include? "pussy"
@@ -37,18 +38,21 @@ else
 		end
 		end
 
-	rapper = Rapper.new(rapper_name, pussy_count, bitch_count, ho_count)
+	rapper = Rapper.new(rapper_name, pussy_count, bitch_count, ho_count, song_count)
 	
+	print_rapper(rapper)
+
+end
+end
+
+def print_rapper(rapper)
+
 	puts "\n" 
 	puts "Here are the misogyny stats for #{rapper.name}:"
 	puts "\n" 
-	puts "Out of the #{song_ids.length} songs analyzed, #{rapper.name} uses the word 'bitch' #{rapper.bitch_score} times, 'pussy' #{rapper.pussy_score} times and 'ho' #{rapper.ho_score} times."
+	puts "Out of the #{rapper.song_count} songs analyzed, #{rapper.name} uses the word 'bitch' #{rapper.bitch_score} times, 'pussy' #{rapper.pussy_score} times and 'ho' #{rapper.ho_score} times."
 	puts "\n" 
-	puts "Overall, we found #{rapper.bitch_score + rapper.pussy_score + rapper.ho_score} misogynistic lyrics in #{song_ids.length} #{rapper.name} songs."
+	puts "Overall, we found #{rapper.bitch_score + rapper.pussy_score + rapper.ho_score} misogynistic lyrics in #{rapper.song_count} #{rapper.name} songs."
 	puts "\n" 
 
 end
-end
-
-
-
