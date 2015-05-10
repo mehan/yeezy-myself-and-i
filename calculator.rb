@@ -56,8 +56,6 @@ randomly_based = based_lyrics.shuffle
 
 poem = randomly_based[1]+'<br>'+randomly_based[2]+'<br>'+randomly_based[3]+'<br>'+randomly_based[4]+'<br>'+randomly_based[5]
 
-# poem = randomly_based[1]+randomly_based[2]+randomly_based[3]+randomly_based[4]+randomly_based[5]
-
 client = Tumblr::Client.new
 
 client.text("based-poetry.tumblr.com", {:body => poem}) 
