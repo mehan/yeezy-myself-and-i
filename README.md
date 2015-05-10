@@ -6,7 +6,7 @@ Yeezy, Myself and I is a poetry bot that generates poems from Kanye West lyrics.
 
 * Instead of searching for one keyword, it searches for a number of terms (contained in the 'words' array) and ingests the line if it contains any of those words.
 
-* It tests to see if a line contains a square bracket ("[") to avoid metalines like "[Produced by Kanye West]" and "[Verse 1: Kanye West]".
+* It tests to see if a line contains a square bracket, colon or quotation marks, to avoid metalines like "[Produced by Kanye West]" and "[Verse 1: Kanye West]".
 
 * If you need to generate Oauth credentials for your app to post to Tumblr, you will find [this Gist](https://gist.github.com/monde/4577106/) very helpful.
 

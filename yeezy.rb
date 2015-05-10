@@ -52,8 +52,12 @@ words = [' I ', "I'm'", ' me ', 'myself', 'Kanye', 'Yeezy', 'Yeezus', 'Mr. West'
 
 lyrics_by_line.each do |line|
 if words.any? { |w| line[w] } 
-unless line.include? '['
+unless line.include? '[' 
+unless line.include? ':' 
+unless line.include? '"'   
 based_lyrics << line
+end
+end
 end
 end
 end
