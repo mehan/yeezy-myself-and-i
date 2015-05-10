@@ -1,14 +1,14 @@
-#Based Poetry 2.0#
+#Yeezy, Myself and I#
 
-Based Poetry 2.0 is a new version of [Based Poetry](https://github.com/mehan/based-poetry), rewritten in Ruby to take advantage of Tim Rogers' [RapGenius gem](https://github.com/timrogers/rapgenius). 
+Yeezy, Myself and I is a poetry bot that generates poems from Kanye West lyrics. To see it in action [visit the Yeezy, Myself and I Tumblr blog](http://yeezy-myself-and-i.tumblr.com/). It's written in Ruby, is based on the [Based Poetry codebase](https://github.com/mehan/based-poetry-2.0) and relies on Tim Rogers' [RapGenius gem](https://github.com/timrogers/rapgenius). It differs from the Based Poetry script in a few minor ways:
 
-Based Poetry is a simple Ruby script that creates poems from hip-hop lyrics and posts them to a Tumblr blog. To see it in action [visit the Based Poetry Tumblr blog](http://based-poetry.tumblr.com/). In this case, it searches for songs by Lil B, ingests 20 pages worth of results, selects any lines that contain the keyword "based," constructs a poem by selecting five of those lines at random and then posts them to the based-poetry Tumblr blog. By altering the 'Rapgenius.search_by_artist(ARTIST)' and 'if line.include? KEYWORD' lines, you could create a script that constructs poems from any hip-hop artist based on any keyword and posts them to Tumblr.  
+*Since Kanye is not just a rapper but also a producer (and also often appears as a guest on other artists' tracks), the script performs a check on each song to ensure that Kanye West is the primary artist.
 
-To post to a Tumblr account, you'll need to [register your app to use the Tumblr API](http://www.tumblr.com/docs/en/api/v2). You'll then need to go through the OAuth flow to grant your app credentials to post to your Tumblr blog. I used [this three-legged Python OAuth example](https://github.com/simplegeo/python-oauth2#twitter-three-legged-oauth-example) (just replace all the Twitter stuff with Tumblr stuff).
+*Instead of searching for one keyword, it searches for a number of terms (contained in the 'words' array) and ingests the line if it contains any of those words.
 
-If you want to automate the app, you'll need to use something like a cron job. I simply deployed the app to Heroku and used [the Heroku scheduler](https://addons.heroku.com/scheduler) in order to schedule it to run daily.
+*It tests to see if a line contains a square bracket ("[") to avoid metalines like "[Produced by Kanye West]" and "[Verse 1: Kanye West]".
 
-Shoutout to [the cat force](https://www.facebook.com/CatForceProtectLilBAndKekeAtAllCost), protect Lil B at all cost. 
+For additional documentation, see the [Based Poetry 2.0 repo](https://github.com/mehan/based-poetry-2.0).
 
 
 

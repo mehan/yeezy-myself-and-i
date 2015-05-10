@@ -12,7 +12,7 @@ end
 http = Net::HTTP.new(@host, @port)
 http.read_timeout = 2000
 
-song_index = RapGenius.search_by_artist("Lil B")
+song_index = RapGenius.search_by_artist("Kanye West")
 
 basedgod = song_index[1].artist
 
@@ -27,7 +27,9 @@ poem  = ""
 1.upto(20) do |num|
 songs = basedgod.songs(page: num)
 songs.each do |song|
-song_ids << song.id 
+  if song.artist.name == "Kanye West"
+    song_ids << song.id 
+  end
 end
 end
 
@@ -45,9 +47,14 @@ end
 
 lyrics_by_line = lyrics_by_line.flatten
 
+
+words = [' I ', "I'm'", ' me ', 'myself', 'Kanye', 'Yeezy', 'Yeezus', 'Mr. West', 'Kanyeezy']
+
 lyrics_by_line.each do |line|
-if line.include? "based"
+if words.any? { |w| line[w] } 
+unless line.include? '['
 based_lyrics << line
+end
 end
 end
 
@@ -55,6 +62,8 @@ randomly_based = based_lyrics.shuffle
 
 poem = randomly_based[1]+'<br>'+randomly_based[2]+'<br>'+randomly_based[3]+'<br>'+randomly_based[4]+'<br>'+randomly_based[5]
 
+binding.pry
+
 client = Tumblr::Client.new
 
-client.text("based-poetry.tumblr.com", {:body => poem}) 
+client.text("http://yeezy-myself-and-i.tumblr.com/", {:body => poem}) 
