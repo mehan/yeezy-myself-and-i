@@ -64,4 +64,4 @@ poem = randomly_based[1]+'<br>'+randomly_based[2]+'<br>'+randomly_based[3]+'<br>
 
 client = Tumblr::Client.new
 
-client.text("http://yeezy-myself-and-i.tumblr.com/", {:body => poem}) 
+client.text("yeezy-myself-and-i.tumblr.com/", {:body => poem}) 
