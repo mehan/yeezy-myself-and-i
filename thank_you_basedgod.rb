@@ -12,7 +12,6 @@ end
 http = Net::HTTP.new(@host, @port)
 http.read_timeout = 2000
 
-
 song_index = RapGenius.search_by_artist("Lil B")
 
 basedgod = song_index[1].artist
@@ -25,7 +24,7 @@ based_lyrics = []
 randomly_based = []
 poem  = ""
 
-1.upto(10) do |num|
+1.upto(20) do |num|
 songs = basedgod.songs(page: num)
 songs.each do |song|
 song_ids << song.id 
