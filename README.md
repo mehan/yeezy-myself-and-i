@@ -1,6 +1,6 @@
 #Yeezy, Myself and I#
 
-Yeezy, Myself and I is a poetry bot that generates poems from Kanye West lyrics. To see it in action [visit the Yeezy, Myself and I Tumblr blog](http://yeezy-myself-and-i.tumblr.com/). It's written in Ruby, is based on the [Based Poetry codebase](https://github.com/mehan/based-poetry-2.0) and relies on Tim Rogers' [RapGenius gem](https://github.com/timrogers/rapgenius). It differs from the Based Poetry script in a few minor ways:
+Yeezy, Myself and I is a poetry bot that generates poems from Kanye West lyrics. To see it in action, [visit the Yeezy, Myself and I](http://yeezy-myself-and-i.tumblr.com/) Tumblr blog. It's written in Ruby, is based on the [Based Poetry codebase](https://github.com/mehan/based-poetry-2.0) and relies on Tim Rogers' [RapGenius gem](https://github.com/timrogers/rapgenius). It differs from the Based Poetry script in a few minor ways:
 
 *Since Kanye is not just a rapper but also a producer (and also often appears as a guest on other artists' tracks), the script performs a check on each song to ensure that Kanye West is the primary artist.
 
