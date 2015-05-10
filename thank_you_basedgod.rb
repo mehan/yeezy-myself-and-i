@@ -3,10 +3,10 @@ require 'net/http'
 require 'tumblr_client'
 
 Tumblr.configure do |config|
-  config.consumer_key = ENV["consumer_key"]
-  config.consumer_secret = ENV["consumer_secret"]
-  config.oauth_token = ENV["access_token"]
-  config.oauth_token_secret = ENV["access_token_secret"]
+  config.consumer_key = ENV['consumer_key']
+  config.consumer_secret = ENV['consumer_secret']
+  config.oauth_token = ENV['access_token']
+  config.oauth_token_secret = ENV['access_token_secret']
 end
 
 http = Net::HTTP.new(@host, @port)
