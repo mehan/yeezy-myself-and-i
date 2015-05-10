@@ -1,6 +1,7 @@
 require 'rapgenius'
 require 'net/http' 
 require 'tumblr_client'
+require 'pry'
 
 Tumblr.configure do |config|
   config.consumer_key = ENV['consumer_key']
@@ -57,5 +58,7 @@ randomly_based = based_lyrics.shuffle
 poem = randomly_based[1]+'<br>'+randomly_based[2]+'<br>'+randomly_based[3]+'<br>'+randomly_based[4]+'<br>'+randomly_based[5]
 
 client = Tumblr::Client.new
+
+binding.pry
 
 client.text("based-poetry.tumblr.com", {:body => poem}) 
