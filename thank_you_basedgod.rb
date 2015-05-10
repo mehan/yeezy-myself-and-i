@@ -13,6 +13,7 @@ end
 http = Net::HTTP.new(@host, @port)
 http.read_timeout = 2000
 
+
 song_index = RapGenius.search_by_artist("Lil B")
 
 basedgod = song_index[1].artist
