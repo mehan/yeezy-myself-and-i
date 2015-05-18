@@ -1,6 +1,7 @@
 require 'rapgenius'
 require 'net/http' 
 require 'tumblr_client'
+# require 'pry'
 
 Tumblr.configure do |config|
   config.consumer_key = ENV['consumer_key']
@@ -12,9 +13,9 @@ end
 http = Net::HTTP.new(@host, @port)
 http.read_timeout = 2000
 
-song_index = RapGenius.search_by_artist("Kanye West")
+song_index = RapGenius.search_by_artist("kanye west")
 
-basedgod = song_index[1].artist
+basedgod = song_index[4].artist
 
 song_ids = []
 songs = []
@@ -49,15 +50,12 @@ lyrics_by_line = lyrics_by_line.flatten
 
 
 words = [' I ', "I'm'", ' me ', 'myself', 'Kanye', 'Yeezy', 'Yeezus', 'Mr. West', 'Kanyeezy']
+punctuation = ['[', ':', '"']
 
 lyrics_by_line.each do |line|
 if words.any? { |w| line[w] } 
-unless line.include? '[' 
-unless line.include? ':' 
-unless line.include? '"'   
+unless punctuation.any? { |w| line[w] }   
 based_lyrics << line
-end
-end
 end
 end
 end
@@ -68,4 +66,4 @@ poem = randomly_based[1]+'<br>'+randomly_based[2]+'<br>'+randomly_based[3]+'<br>
 
 client = Tumblr::Client.new
 
-client.text("yeezy-myself-and-i.tumblr.com/", {:body => poem}) 
+client.text("yeezy-myself-and-i.tumblr.com/", {:body => poem, :tags => ['kanye', 'kanye west']}) 
