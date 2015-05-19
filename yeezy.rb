@@ -15,7 +15,7 @@ http.read_timeout = 2000
 
 song_index = RapGenius.search_by_artist("kanye west")
 
-basedgod = song_index[4].artist
+basedgod = song_index[0].artist
 
 song_ids = []
 songs = []
