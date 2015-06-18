@@ -10,6 +10,8 @@ Tumblr.configure do |config|
   config.oauth_token_secret = ENV['oauth_token_secret']
 end
 
+RapGenius::Client.access_token = ENV['rapgenius-client']
+
 http = Net::HTTP.new(@host, @port)
 http.read_timeout = 2000
 
