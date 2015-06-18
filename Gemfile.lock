@@ -10,11 +10,11 @@ GEM
       multi_xml (>= 0.5.2)
     json (1.8.2)
     mime-types (2.5)
-    multi_json (1.11.0)
+    multi_json (1.11.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     oauth (0.4.7)
-    rapgenius (1.0.5)
+    rapgenius (1.1.1)
       httparty (~> 0.11.0)
     simple_oauth (0.3.1)
     tumblr_client (0.8.5)
@@ -29,5 +29,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  rapgenius (~> 1.0.5)
+  rapgenius (~> 1.1.1)
   tumblr_client (~> 0.8.5)
